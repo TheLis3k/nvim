@@ -8,7 +8,7 @@ local function send_visual_to_ai()
     vim.cmd('normal! "ay')
     local selection = vim.fn.getreg('a')
     vim.cmd("wincmd l")
-    vim.api.nvim_chan_send(vim.b.terminal_job_id, selection .. "\n")
+    vim.api.nvim_chan_send(vim.b.terminal_job_id, selection)
     vim.cmd("wincmd h")
 end
 
