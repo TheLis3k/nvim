@@ -1,8 +1,9 @@
-local function open_ai(role)
+local function open_ai(model)
     vim.cmd("vsplit")
-    vim.cmd("term aichat -r " .. role)
+    vim.cmd("term ollama run " .. model)
     vim.cmd("startinsert")
 end
+
 local function send_visual_to_ai()
     vim.cmd('normal! "ay')
     local selection = vim.fn.getreg('a')
@@ -11,6 +12,5 @@ local function send_visual_to_ai()
     vim.cmd("wincmd h")
 end
 
-vim.keymap.set("n", "<leader>af", function() open_ai("fast") end, { desc = "AI Fast (Flash)" })
-vim.keymap.set("n", "<leader>as", function() open_ai("smart") end, { desc = "AI Smart (Pro)" })
+vim.keymap.set("n", "<leader>af", function() open_ai("arch-coder") end, { desc = "AI Fast (Arch Coder)" })
 vim.keymap.set("v", "<leader>v", send_visual_to_ai, { desc = "Send to AI" })
