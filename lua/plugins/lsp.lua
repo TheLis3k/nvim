@@ -37,6 +37,8 @@ return {
 		    { buffer = args.buf, desc = "Dokumentacja pod kursorem" })
 		    vim.keymap.set("n", "<leader>vca", vim.lsp.buf.code_action,
 		    { buffer = args.buf, desc = "Akcje kodu (LSP)" })
+		    vim.keymap.set("n", "<leader>vd", vim.diagnostic.open_float,
+		    { buffer = args.buf, desc = "Pokaż błąd (Diagnostyka)" })
 		end,
 	    })
 	end

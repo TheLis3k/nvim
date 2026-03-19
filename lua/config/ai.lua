@@ -12,5 +12,5 @@ local function send_visual_to_ai()
     vim.cmd("wincmd h")
 end
 
-vim.keymap.set("n", "<leader>af", function() open_ai("arch-coder") end, { desc = "AI Fast (Arch Coder)" })
+vim.keymap.set("n", "<leader>af", function() open_ai("qwen2.5-coder:1.5b") end, { desc = "AI Fast (Arch Coder)" })
 vim.keymap.set("v", "<leader>v", send_visual_to_ai, { desc = "Send to AI" })
